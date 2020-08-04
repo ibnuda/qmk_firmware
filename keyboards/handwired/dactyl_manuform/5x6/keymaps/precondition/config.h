@@ -8,7 +8,7 @@
 // Rows are doubled-up
 
 // Default tapping term is 200
-#define TAPPING_TERM 300
+#define TAPPING_TERM 180
 #define TAPPING_TERM_PER_KEY
 
 // Prevent normal rollover on alphas from accidentally triggering mods.

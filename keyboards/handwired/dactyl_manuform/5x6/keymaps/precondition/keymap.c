@@ -597,7 +597,7 @@ void process_combo_event(uint8_t combo_index, bool pressed) {
  */
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case HOME_I:
+        /*case HOME_I:
             // My ring finger tends to linger on the key 
             // This tapping term allows me to type "ion" effortlessly.
             return TAPPING_TERM + 200;
@@ -615,7 +615,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case HOME_D:
             return TAPPING_TERM - 20;
         case HOME_H:
-            return TAPPING_TERM - 20;
+            return TAPPING_TERM - 20;*/
         default:
             return TAPPING_TERM;
     }

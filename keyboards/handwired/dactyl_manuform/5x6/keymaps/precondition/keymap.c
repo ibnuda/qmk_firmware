@@ -424,7 +424,7 @@ combo_t key_combos[COMBO_COUNT] = {
 void process_combo_event(uint8_t combo_index, bool pressed) {
     mod_state = get_mods();
     switch(combo_index) {
-        case UY_PRN:
+        /*case UY_PRN:
           if (pressed) {
             if (mod_state & MOD_MASK_SHIFT) {
                 // First canceling both shifts so that shift isn't applied
@@ -587,7 +587,7 @@ void process_combo_event(uint8_t combo_index, bool pressed) {
               }
           } else {
           }
-          break;
+          break;*/
 
     }
 }

@@ -647,8 +647,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_BSLASH, KC_Z  , KC_X  , KC_C  , KC_D, KC_V  ,      KC_K  , KC_H  ,KC_COMM, KC_DOT,KC_SLSH, KC_GRV,
                         KC_LPRN,KC_RPRN,                                   KC_LBRC, KC_RBRC,
                                           NAV  , KC_SPC,    KC_BSPC, SYM_ENT,
-                                   TD(CA_CC_CV), MOUSE ,    KC_DEL , KC_LGUI,
-                                        KC_LALT,KC_CAPS,    KC_NO  , KC_NO
+                                        KC_LALT, MOUSE ,    KC_DEL , KC_LGUI,
+                                        KC_LALT,KC_LALT,    KC_LGUI, KC_LGUI
   ),
 
   [_SYM] = LAYOUT_5x6(

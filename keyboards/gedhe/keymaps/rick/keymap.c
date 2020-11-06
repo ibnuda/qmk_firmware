@@ -52,10 +52,10 @@ enum {
 };
 
 enum custom_keycodes {
-  BASE = SAFE_RANGE,
-  LOWER,
-  RAISE,
-  ADJUST,
+    BASE = SAFE_RANGE,
+    LOWER,
+    RAISE,
+    ADJUST,
 };
 
 // thumb keys.
@@ -95,6 +95,7 @@ enum custom_keycodes {
 #define CONPST LSFT(KC_INS)
 #define CLSGUI LALT(KC_F4)
 
+/*
 // left hand combinations.
 const uint16_t PROGMEM colon_comma_combo[] = {KC_SCLN, KC_COMM, COMBO_END};
 const uint16_t PROGMEM comma_dot_combo[]   = {KC_COMM, KC_DOT, COMBO_END};
@@ -148,31 +149,43 @@ combo_t key_combos[COMBO_COUNT] = {
     // both hand combinations.
     [J_W]           = COMBO(j_w_combo,          KC_ENT),
 };
+*/
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
-    KC_SCLN,KC_COMM,KC_DOT, KC_P,   KC_Y,       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,
-    SH_A,   CT_O,   AL_E,   KC_U,   GU_I,       GU_D,   KC_H,   AL_T,   CT_N,   SH_S,
-    KC_QUOT,KC_Q,   KC_J,   KC_K,   KC_X,       KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,
-                            LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC
+    KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_BSPC,
+    KC_TAB, KC_SCLN,KC_COMM,KC_DOT, KC_P,   KC_Y,                       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,   KC_BSLS,
+    KC_LCTL,SH_A,   CT_O,   AL_E,   KC_U,   GU_I,                       GU_D,   KC_H,   AL_T,   CT_N,   SH_S,   KC_QUOT,
+    KC_LSFT,KC_QUOT,KC_Q,   KC_J,   KC_K,   KC_X,   KC_LALT,    KC_LALT,KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,   KC_RSFT,
+                    KC_LBRC,KC_LGUI,_______,LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC, _______,KC_RGUI,KC_RBRC
 ),
 
 [_RAISE] = LAYOUT(
-    KC_EXLM,KC_AT,  KC_UP,  KC_LCBR,KC_RCBR,    KC_BSLS,KC_7,   KC_8,   KC_9,   KC_ASTR ,
-    KC_HASH,KC_LEFT,KC_DOWN,KC_RGHT,KC_DLR,     KC_EQL, KC_4,   KC_5,   KC_6,   KC_0 ,
-    KC_LBRC,KC_RBRC,KC_LPRN,KC_RPRN,KC_AMPR,    KC_GRV, KC_1,   KC_2,   KC_3,   KC_PLUS ,
-                            ADDDD  ,_______,    _______,_______
+    KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                      KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_BSPC,
+    KC_TAB, _______,_______,_______,KC_F11 ,_______,                    _______,KC_F12 ,_______,_______,_______,KC_BSLS,
+    KC_LCTL,_______,_______,_______,_______,_______,                    _______,_______,_______,_______,_______,KC_QUOT,
+    KC_LSFT,_______,_______,_______,_______,_______,KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,KC_RSFT,
+                    KC_LBRC,KC_LGUI,_______,ADDDD,  SFT_ESC,    ALT_ENT,RS_SPC, _______,KC_RGUI,KC_RBRC
 ),
 [_LOWER] = LAYOUT(
-    KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,      KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC ,
-    KC_LSFT,KC_TAB, KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT  ,
-    KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
-                            _______,_______,    _______,ADDDD
+    KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                      KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_BSPC,
+    KC_TAB, _______,_______,_______,KC_F11 ,_______,                    _______,KC_F12 ,_______,_______,_______,KC_BSLS,
+    KC_LCTL,_______,_______,_______,_______,_______,                    KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,_______,KC_QUOT,
+    KC_LSFT,_______,_______,_______,_______,_______,KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,KC_RSFT,
+                    KC_LBRC,KC_LGUI,_______,LW_BSPC,SFT_ESC,    ALT_ENT,ADDDD,  _______,KC_RGUI,KC_RBRC
 ),
 [_ADJUST] = LAYOUT(
-    _______,EXPLR,  KC_UP,  PRVTAB, PRVWIN,     NXTWIN, NXTTAB, _______,_______,LCKGUI,
-    TSKMGR, KC_LEFT,KC_DOWN,KC_RGHT,UPTAB,      DNTAB,  KC_ENT, KC_LGUI,_______,CALDL,
-    _______,CLSGUI, _______,CONPST, RESET,      _______,_______,_______,_______,_______,
-                            _______,_______,    _______,_______
+    KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                      KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_BSPC,
+    KC_TAB, _______,_______,_______,KC_F11 ,_______,                    _______,KC_F12 ,_______,_______,_______,KC_BSLS,
+    KC_LCTL,_______,_______,_______,_______,_______,                    KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,_______,KC_QUOT,
+    KC_LSFT,_______,_______,_______,_______,RESET,  KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,KC_RSFT,
+                    KC_LBRC,KC_LGUI,_______,LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC, _______,KC_RGUI,KC_RBRC
 ),
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef CONSOLE_ENABLE
+    uprintf("KL: kc: %u, col: %u, row: %u, pressed: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed);
+#endif
+    return true;
+}

@@ -169,20 +169,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_SCLN,KC_COMM,KC_DOT, KC_P,   KC_Y,                   KC_F,   KC_G,   KC_C,   KC_R,   KC_L,
     SH_A,   CT_O,   AL_E,   MV_U,   GU_I,                   GU_D,   KC_H,   AL_T,   CT_N,   SH_S,
     KC_QUOT,KC_Q,   KC_J,   KC_K,   KC_X,   LOWER,  RAISE,  KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,
-                    KC_LGUI,LW_BSPC,SFT_ESC,                ALT_ENT,RS_SPC, RAISE
+                    SFT_ESC,_______,LW_BSPC,                RS_SPC, _______,ALT_ENT
 ),
 
 [_RAISE] = LAYOUT(
     KC_EXLM,KC_AT,  KC_UP,  KC_LCBR,KC_RCBR,                KC_BSLS,KC_7,   KC_8,   KC_9,   KC_ASTR ,
     KC_HASH,KC_LEFT,KC_DOWN,KC_RGHT,KC_DLR,                 KC_EQL, KC_4,   KC_5,   KC_6,   KC_0 ,
     KC_LBRC,KC_RBRC,KC_LPRN,KC_RPRN,KC_AMPR,LOWER,  RAISE,  KC_GRV, KC_1,   KC_2,   KC_3,   KC_PLUS ,
-                    ADDDD,  ADDDD  ,_______,                _______,_______,RAISE
+                    SFT_ESC,ADDDD  ,ADDDD,                  _______,_______,ALT_ENT
 ),
 [_LOWER] = LAYOUT(
     KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,                  KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC ,
     KC_LSFT,KC_TAB, KC_PGUP,KC_F5,  KC_F6,                  KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT  ,
     KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10, LOWER,  RAISE,  KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
-                    LOWER,  _______,_______,                _______,ADDDD,ADDDD
+                    LOWER,  _______,_______,                ADDDD,  ADDDD,ADDDD
 ),
 [_ADJUST] = LAYOUT(
     _______,EXPLR,  KC_UP,  PRVTAB, PRVWIN,                 NXTWIN, NXTTAB, _______,_______,LCKGUI,

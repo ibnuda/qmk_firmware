@@ -15,6 +15,7 @@
  */
 #include QMK_KEYBOARD_H
 
+#ifdef COMBO_ENABLE
 // enum for combos.
 enum combos {
     // left hand combinations.
@@ -38,53 +39,6 @@ enum combos {
     COMMA_X,
     J_F,
 };
-
-enum {
-    _BASE,
-    _LOWER,
-    _RAISE,
-    _ADJUST,
-};
-
-enum custom_keycodes {
-  BASE = SAFE_RANGE,
-  LOWER,
-  RAISE,
-  ADJUST
-};
-
-// thumb keys.
-#define ALT_ENT   ALT_T(KC_ENT)
-#define SFT_ESC   SFT_T(KC_ESC)
-
-// home row mods.
-#define CT_S    RCTL_T(KC_S)
-#define CT_L    RCTL_T(KC_L)
-#define SH_A    RSFT_T(KC_A)
-#define SH_SCLN RSFT_T(KC_SCLN)
-#define AL_D    RALT_T(KC_D)
-#define AL_K    RALT_T(KC_K)
-#define GU_G    RGUI_T(KC_G)
-#define GU_H    RGUI_T(KC_H)
-
-// layer toggle.
-#define LW_BSPC  LT(_LOWER, KC_BSPC)
-#define RS_SPC   LT(_RAISE, KC_SPC)
-
-// common shortcuts for windows and linux that i use.
-#define NXTTAB LCTL(KC_PGDN)
-#define PRVTAB LCTL(KC_PGUP)
-#define UPTAB  LCTL(LSFT(KC_PGUP))
-#define DNTAB  LCTL(LSFT(KC_PGDN))
-#define NXTWIN LALT(KC_TAB)
-#define PRVWIN LALT(LSFT(KC_TAB))
-#define CALDL  LCTL(LALT(KC_DELT))
-#define TSKMGR LCTL(LSFT(KC_ESC))
-#define EXPLR  LGUI(KC_E)
-#define LCKGUI LGUI(KC_L)
-#define CONPST LSFT(KC_INS)
-#define CLSGUI LALT(KC_F4)
-
 // left hand combinations.
 const uint16_t PROGMEM q_w_combo[]          = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM w_e_combo[]          = {KC_W, KC_E, COMBO_END};
@@ -128,35 +82,79 @@ combo_t key_combos[COMBO_COUNT] = {
     [COMMA_X]       = COMBO(x_comma_combo, KC_END),
     [J_F]           = COMBO(j_f_combo,     KC_ENT),
 };
+#endif
+
+enum {
+    _BASE,
+    _LOWER,
+    _RAISE,
+    _ADJUST,
+};
+
+#define LOWER     MO(_LOWER)
+#define RAISE     MO(_RAISE)
+#define ADJUST    MO(_ADJUST)
+
+// thumb keys.
+#define ALT_ENT   ALT_T(KC_ENT)
+#define SFT_ESC   SFT_T(KC_ESC)
+
+// home row mods.
+#define CT_S    RCTL_T(KC_S)
+#define CT_L    RCTL_T(KC_L)
+#define SH_A    RSFT_T(KC_A)
+#define SH_SCLN RSFT_T(KC_SCLN)
+#define AL_D    RALT_T(KC_D)
+#define AL_K    RALT_T(KC_K)
+#define GU_G    RGUI_T(KC_G)
+#define GU_H    RGUI_T(KC_H)
+
+// layer toggle.
+#define LW_BSPC  LT(_LOWER, KC_BSPC)
+#define RS_SPC   LT(_RAISE, KC_SPC)
+
+// common shortcuts for windows and linux that i use.
+#define NXTTAB LCTL(KC_PGDN)
+#define PRVTAB LCTL(KC_PGUP)
+#define UPTAB  LCTL(LSFT(KC_PGUP))
+#define DNTAB  LCTL(LSFT(KC_PGDN))
+#define NXTWIN LALT(KC_TAB)
+#define PRVWIN LALT(LSFT(KC_TAB))
+#define CALDL  LCTL(LALT(KC_DELT))
+#define TSKMGR LCTL(LSFT(KC_ESC))
+#define EXPLR  LGUI(KC_E)
+#define LCKGUI LGUI(KC_L)
+#define CONPST LSFT(KC_INS)
+#define CLSGUI LALT(KC_F4)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
-    KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_BSPC,
-    KC_TAB, KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSLS,
-    KC_LCTL,SH_A,   CT_S,   AL_D,   KC_F,   GU_G,                       GU_H,   KC_J,   AL_K,   CT_L,   SH_SCLN,KC_QUOT,
-    KC_LSFT,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_LALT,    KC_LALT,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,
-                    KC_LBRC,KC_LGUI,LOWER,  KC_BSPC,KC_LSFT,    KC_ENT, KC_SPC, RAISE,  KC_RGUI,KC_RBRC
+    KC_ESC, KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                       KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS,
+    KC_LBRC,KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_RBRC,
+    KC_TAB, KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                       KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,
+    KC_LCTL,KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_GRV,     KC_EQL, KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_BSLS,
+                    KC_LALT,KC_LGUI,LOWER,  KC_BSPC,KC_LSFT,    KC_ENT, KC_SPC, RAISE,  KC_RGUI,KC_APP
 ),
 
 [_RAISE] = LAYOUT(
     KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                      KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_BSPC,
-    KC_TAB, _______,_______,_______,KC_F11 ,_______,                    _______,KC_F12 ,_______,_______,_______,KC_BSLS,
-    KC_LCTL,_______,_______,_______,_______,_______,                    _______,_______,_______,_______,_______,KC_QUOT,
-    KC_LSFT,_______,_______,_______,_______,_______,KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,KC_RSFT,
-                    KC_LBRC,KC_LGUI,LOWER,  KC_BSPC,KC_LSFT,    KC_ENT, KC_SPC, RAISE,  KC_RGUI,KC_RBRC
+    KC_TAB, _______,_______,_______,KC_F11 ,_______,                    _______,KC_F12 ,_______,_______,_______,_______,
+    KC_LCTL,_______,_______,_______,_______,_______,                    _______,_______,_______,_______,_______,_______,
+    KC_LSFT,_______,_______,_______,_______,_______,KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,_______,
+                    KC_LBRC,KC_LGUI,ADJUST, KC_BSPC,KC_LSFT,    KC_ENT, KC_SPC, RAISE,  KC_RGUI,KC_RBRC
 ),
 [_LOWER] = LAYOUT(
-    KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                      KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_BSPC,
-    KC_TAB, _______,_______,_______,KC_F11 ,_______,                    _______,KC_F12 ,_______,_______,_______,KC_BSLS,
-    KC_LCTL,_______,_______,_______,_______,_______,                    KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,_______,KC_QUOT,
-    KC_LSFT,_______,_______,_______,_______,_______,KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,KC_RSFT,
-                    KC_LBRC,KC_LGUI,LOWER,  KC_BSPC,KC_LSFT,    KC_ENT, KC_SPC, RAISE,  KC_RGUI,KC_RBRC
+    _______,_______,_______,_______,_______,_______,                    _______,_______,_______,_______,_______,_______,
+    _______,_______,_______,KC_UP,  _______,_______,                    _______,_______,KC_PGUP,_______,_______,_______,
+    _______,_______,KC_LEFT,KC_DOWN,KC_RGHT,_______,                    _______,KC_HOME,KC_PGDN,KC_END, _______,_______,
+    _______,_______,_______,_______,_______,_______,KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,_______,
+                    KC_LBRC,KC_LGUI,LOWER,  KC_BSPC,KC_LSFT,    KC_ENT, KC_SPC, ADJUST, KC_RGUI,KC_RBRC
 ),
 [_ADJUST] = LAYOUT(
-    KC_ESC, KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                      KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_BSPC,
-    KC_TAB, _______,_______,_______,KC_F11 ,_______,                    _______,KC_F12 ,_______,_______,_______,KC_BSLS,
-    KC_LCTL,_______,_______,_______,_______,_______,                    KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,_______,KC_QUOT,
-    KC_LSFT,_______,_______,_______,_______,RESET,  KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,KC_RSFT,
+    _______,_______,_______,_______,_______,_______,                    _______,_______,_______,_______,_______,_______,
+    _______,_______,_______,_______,_______,_______,                    _______,_______,_______,_______,_______,_______,
+    _______,_______,_______,_______,_______,_______,                    _______,_______,_______,_______,_______,_______,
+    _______,_______,_______,_______,_______,RESET,  KC_LALT,    KC_LALT,_______,_______,_______,_______,_______,_______,
                     KC_LBRC,KC_LGUI,LOWER,  KC_BSPC,KC_LSFT,    KC_ENT, KC_SPC, RAISE,  KC_RGUI,KC_RBRC
 ),
 };

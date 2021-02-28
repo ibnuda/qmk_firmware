@@ -29,6 +29,8 @@ enum combos {
     J_K,
     Q_K,
     K_X,
+    O_E,
+    O_E_U,
 
     // right hand combinations.
     L_R,
@@ -42,7 +44,8 @@ enum combos {
     W_M,
     V_M,
     M_B,
-    H_T_N,
+    N_T,
+    N_T_H,
 
     // both hands combinations.
     J_W,
@@ -115,6 +118,8 @@ const uint16_t PROGMEM q_j_combo[]         = {KC_Q, KC_J, COMBO_END};
 const uint16_t PROGMEM j_k_combo[]         = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM q_k_combo[]         = {KC_Q, KC_K, COMBO_END};
 const uint16_t PROGMEM k_x_combo[]         = {KC_K, KC_X, COMBO_END};
+const uint16_t PROGMEM o_e_combo[]         = {CT_O, AL_E, COMBO_END};
+const uint16_t PROGMEM o_e_u_combo[]       = {CT_O, AL_E, MV_U, COMBO_END};
 
 // right hand combinations.
 const uint16_t PROGMEM l_r_combo[]         = {KC_L, KC_R, COMBO_END};
@@ -128,7 +133,8 @@ const uint16_t PROGMEM v_w_combo[]         = {KC_V, KC_W, COMBO_END};
 const uint16_t PROGMEM w_m_combo[]         = {KC_W, KC_M, COMBO_END};
 const uint16_t PROGMEM v_m_combo[]         = {KC_V, KC_M, COMBO_END};
 const uint16_t PROGMEM m_b_combo[]         = {KC_M, KC_B, COMBO_END};
-const uint16_t PROGMEM h_t_n_combo[]       = {KC_H, AL_T, CT_N, COMBO_END};
+const uint16_t PROGMEM n_t_combo[]         = {CT_N, AL_T, COMBO_END};
+const uint16_t PROGMEM n_t_h_combo[]       = {CT_N, AL_T, KC_H, COMBO_END};
 
 // both hand combinations.
 const uint16_t PROGMEM j_w_combo[]         = {KC_J, KC_W, COMBO_END};
@@ -146,6 +152,8 @@ combo_t key_combos[COMBO_COUNT] = {
     [J_K]           = COMBO(j_k_combo,          KC_DELT),
     [Q_K]           = COMBO(q_k_combo,          KC_TAB),
     [K_X]           = COMBO(k_x_combo,          KC_TILD),
+    [O_E]           = COMBO(o_e_combo,          KC_SPC),
+    [O_E_U]         = COMBO(o_e_u_combo,        KC_TAB),
 
     // right hand combinations.
     [L_R]           = COMBO(l_r_combo,          KC_BSPC),
@@ -159,7 +167,8 @@ combo_t key_combos[COMBO_COUNT] = {
     [W_M]           = COMBO(w_m_combo,          KC_DELT),
     [V_M]           = COMBO(v_m_combo,          LSFT(KC_TAB)),
     [M_B]           = COMBO(m_b_combo,          KC_GRV),
-    [H_T_N]         = COMBO(h_t_n_combo,        KC_SPC),
+    [N_T]           = COMBO(n_t_combo,          KC_BSPC),
+    [N_T_H]         = COMBO(n_t_h_combo,        KC_ENT),
 
     // both hand combinations.
     [J_W]           = COMBO(j_w_combo,          KC_ENT),

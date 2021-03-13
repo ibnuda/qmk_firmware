@@ -38,7 +38,8 @@ enum combos {
     Z_M,
     U_V,
     M_V,
-    X_MINS,
+    MINS_X,
+    K_W,
     MINS_K,
     MINS_W,
     W_SCLN,
@@ -65,8 +66,8 @@ enum custom_keycodes {
 };
 
 // thumb keys.
-#define ALT_ENT   ALT_T(KC_ENT)
-#define SFT_ESC   SFT_T(KC_ESC)
+#define AL_ENT   ALT_T(KC_ENT)
+#define SF_BSPC  SFT_T(KC_BSPC)
 //#define TSF_ESC   TD(SFT_ESC)
 
 // home row mods.
@@ -104,75 +105,76 @@ enum custom_keycodes {
 #define CLSGUI LALT(KC_F4)
 
 // left hand combinations.
-const uint16_t PROGMEM q_p_combo[] = {KC_Q, KC_P, COMBO_END};
-const uint16_t PROGMEM p_y_combo[]   = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM y_c_combo[]       = {KC_DOT, KC_P, COMBO_END};
-const uint16_t PROGMEM c_b_combo[]         = {KC_P, KC_Y, COMBO_END};
-const uint16_t PROGMEM y_b_combo[]       = {KC_DOT, KC_Y, COMBO_END};
-const uint16_t PROGMEM p_c_combo[]     = {KC_COMM, KC_P, COMBO_END};
-const uint16_t PROGMEM comma_dot_combo[]      = {KC_QUOT, KC_Q, COMBO_END};
-const uint16_t PROGMEM dot_j_combo[]         = {KC_Q, KC_J, COMBO_END};
-const uint16_t PROGMEM j_g_combo[]         = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM dot_g_combo[]         = {KC_Q, KC_K, COMBO_END};
-const uint16_t PROGMEM g_quot_combo[]         = {KC_K, KC_X, COMBO_END};
-const uint16_t PROGMEM n_i_s_combo[]       = {CT_O, AL_E, MV_U, COMBO_END};
+const uint16_t PROGMEM q_p_combo[]        = {KC_Q, KC_P, COMBO_END};
+const uint16_t PROGMEM p_y_combo[]        = {KC_P, KC_Y, COMBO_END};
+const uint16_t PROGMEM y_c_combo[]        = {KC_Y, KC_C, COMBO_END};
+const uint16_t PROGMEM c_b_combo[]        = {KC_C, KC_B, COMBO_END};
+const uint16_t PROGMEM y_b_combo[]        = {KC_Y, KC_B, COMBO_END};
+const uint16_t PROGMEM p_c_combo[]        = {KC_P, KC_C, COMBO_END};
+const uint16_t PROGMEM comma_dot_combo[]  = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM dot_j_combo[]      = {KC_DOT, KC_J, COMBO_END};
+const uint16_t PROGMEM j_g_combo[]        = {KC_J, KC_G, COMBO_END};
+const uint16_t PROGMEM dot_g_combo[]      = {KC_DOT, KC_G, COMBO_END};
+const uint16_t PROGMEM g_quot_combo[]     = {KC_G, KC_QUOT, COMBO_END};
+const uint16_t PROGMEM n_i_s_combo[]      = {CT_N, AL_I, KC_S, COMBO_END};
 
 // right hand combinations.
-const uint16_t PROGMEM l_z_combo[]         = {KC_L, KC_R, COMBO_END};
-const uint16_t PROGMEM r_c_combo[]         = {KC_R, KC_C, COMBO_END};
-const uint16_t PROGMEM c_g_combo[]         = {KC_C, KC_G, COMBO_END};
+const uint16_t PROGMEM l_z_combo[]         = {KC_L, KC_Z, COMBO_END};
+const uint16_t PROGMEM z_u_combo[]         = {KC_Z, KC_U, COMBO_END};
+const uint16_t PROGMEM u_m_combo[]         = {KC_U, KC_M, COMBO_END};
+const uint16_t PROGMEM z_m_combo[]         = {KC_Z, KC_M, COMBO_END};
 const uint16_t PROGMEM r_g_combo[]         = {KC_R, KC_G, COMBO_END};
-const uint16_t PROGMEM c_f_combo[]         = {KC_C, KC_F, COMBO_END};
-const uint16_t PROGMEM g_f_combo[]         = {KC_G, KC_F, COMBO_END};
-const uint16_t PROGMEM z_v_combo[]         = {KC_Z, KC_V, COMBO_END};
-const uint16_t PROGMEM v_w_combo[]         = {KC_V, KC_W, COMBO_END};
-const uint16_t PROGMEM w_m_combo[]         = {KC_W, KC_M, COMBO_END};
-const uint16_t PROGMEM v_m_combo[]         = {KC_V, KC_M, COMBO_END};
-const uint16_t PROGMEM m_b_combo[]         = {KC_M, KC_B, COMBO_END};
-const uint16_t PROGMEM n_t_h_combo[]       = {CT_N, AL_T, KC_H, COMBO_END};
+const uint16_t PROGMEM u_v_combo[]         = {KC_U, KC_V, COMBO_END};
+const uint16_t PROGMEM m_v_combo[]         = {KC_M, KC_V, COMBO_END};
+const uint16_t PROGMEM mins_x_combo[]      = {KC_MINS, KC_X, COMBO_END};
+const uint16_t PROGMEM mins_k_combo[]      = {KC_MINS, KC_K, COMBO_END};
+const uint16_t PROGMEM k_w_combo[]         = {KC_K, KC_W, COMBO_END};
+const uint16_t PROGMEM mins_w_combo[]      = {KC_MINS, KC_W, COMBO_END};
+const uint16_t PROGMEM w_scln_combo[]      = {KC_M, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM o_h_t_combo[]       = {CT_O, AL_H, KC_T, COMBO_END};
 
 // both hand combinations.
-const uint16_t PROGMEM j_w_combo[]         = {KC_J, KC_W, COMBO_END};
+const uint16_t PROGMEM j_k_combo[]         = {KC_J, KC_K, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     // left hand combinations.
-    [COLON_COMMA]   = COMBO(colon_comma_combo,  KC_TAB),
-    [COMMA_DOT]     = COMBO(comma_dot_combo,    KC_QUES),
-    [DOT_P]         = COMBO(dot_p_combo,        KC_UNDS),
-    [P_Y]           = COMBO(p_y_combo,          KC_PIPE),
-    [DOT_Y]         = COMBO(dot_y_combo,        KC_ENT),
-    [COMMA_P]       = COMBO(comma_p_combo,      PRVTAB),
-    [QUOT_Q]        = COMBO(quot_q_combo,       KC_ENT),
-    [Q_J]           = COMBO(q_j_combo,          LCTL(KC_W)),
-    [J_K]           = COMBO(j_k_combo,          KC_DELT),
-    [Q_K]           = COMBO(q_k_combo,          KC_TAB),
-    [K_X]           = COMBO(k_x_combo,          KC_TILD),
-    [O_E_U]         = COMBO(o_e_u_combo,        KC_TAB),
+    [Q_P]           = COMBO(q_p_combo,          KC_TAB),
+    [P_Y]           = COMBO(p_y_combo,          KC_QUES),
+    [Y_C]           = COMBO(y_c_combo,          KC_UNDS),
+    [C_B]           = COMBO(c_b_combo,          KC_PIPE),
+    [Y_B]           = COMBO(y_b_combo,          KC_ENT),
+    [P_C]           = COMBO(p_c_combo,          PRVTAB),
+    [COMMA_DOT]     = COMBO(comma_dot_combo,    KC_ENT),
+    [DOT_J]         = COMBO(dot_j_combo,        LCTL(KC_W)),
+    [J_G]           = COMBO(j_g_combo,          KC_DELT),
+    [DOT_G]         = COMBO(dot_g_combo,        KC_TAB),
+    [G_QUOT]        = COMBO(g_quot_combo,       KC_TILD),
+    [N_I_S]         = COMBO(n_i_s_combo,        KC_TAB),
 
     // right hand combinations.
-    [L_R]           = COMBO(l_r_combo,          KC_BSPC),
-    [R_C]           = COMBO(r_c_combo,          KC_SLSH),
-    [C_G]           = COMBO(c_g_combo,          KC_MINS),
-    [R_G]           = COMBO(r_g_combo,          NXTTAB),
-    [C_F]           = COMBO(c_f_combo,          KC_ENT),
-    [G_F]           = COMBO(g_f_combo,          KC_BSLS),
-    [Z_V]           = COMBO(z_v_combo,          KC_ESC),
-    [V_W]           = COMBO(v_w_combo,          KC_APP),
-    [W_M]           = COMBO(w_m_combo,          KC_DELT),
-    [V_M]           = COMBO(v_m_combo,          LSFT(KC_TAB)),
-    [M_B]           = COMBO(m_b_combo,          KC_GRV),
-    [N_T_H]         = COMBO(n_t_h_combo,        KC_ENT),
+    [L_Z]           = COMBO(l_z_combo,          KC_BSPC),
+    [Z_U]           = COMBO(z_u_combo,          KC_SLSH),
+    [U_M]           = COMBO(u_m_combo,          KC_MINS),
+    [Z_M]           = COMBO(z_m_combo,          NXTTAB),
+    [U_V]           = COMBO(u_v_combo,          KC_ENT),
+    [M_V]           = COMBO(m_v_combo,          KC_BSLS),
+    [MINS_X]        = COMBO(mins_x_combo,       KC_ESC),
+    [MINS_K]        = COMBO(mins_k_combo,       KC_APP),
+    [K_W]           = COMBO(k_w_combo,          KC_DELT),
+    [MINS_W]        = COMBO(mins_w_combo,       LSFT(KC_TAB)),
+    [W_SCLN]        = COMBO(w_scln_combo,       KC_GRV),
+    [O_H_T]         = COMBO(o_h_t_combo,        KC_ENT),
 
     // both hand combinations.
-    [J_W]           = COMBO(j_w_combo,          KC_ENT),
+    [J_K]           = COMBO(j_k_combo,          KC_ENT),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT_split_3x5_3(
-    KC_Q   ,KC_P,   KC_Y,   KC_Y,   KC_B,       KC_V,   KC_M,   KC_U,   KC_Z,   KC_L,
+    KC_Q,   KC_P,   KC_Y,   KC_C,   KC_B,       KC_V,   KC_M,   KC_U,   KC_Z,   KC_L,
     SH_A,   CT_N,   AL_I,   KC_S,   GU_F,       GU_D,   KC_T,   AL_H,   CT_O,   SH_R,
-    KC_COMM,KC_DOT, KC_J,   KC_G,   KC_QUOT,    KC_SCLN KC_W,   KC_K,   KC_MIN, KC_X,
-                    KC_LGUI,LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC, RAISE
+    KC_COMM,KC_DOT, KC_J,   KC_G,   KC_QUOT,    KC_SCLN,KC_W,   KC_K,   KC_MINS,KC_X,
+                    KC_ESC, LW_E,   SF_BSPC,    AL_ENT, RS_SPC, RAISE
 ),
 
 [_RAISE] = LAYOUT_split_3x5_3(

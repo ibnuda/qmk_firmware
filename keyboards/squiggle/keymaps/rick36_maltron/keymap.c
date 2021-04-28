@@ -130,7 +130,7 @@ const uint16_t PROGMEM mins_x_combo[]      = {KC_MINS, KC_X, COMBO_END};
 const uint16_t PROGMEM mins_k_combo[]      = {KC_MINS, KC_K, COMBO_END};
 const uint16_t PROGMEM k_w_combo[]         = {KC_K, KC_W, COMBO_END};
 const uint16_t PROGMEM mins_w_combo[]      = {KC_MINS, KC_W, COMBO_END};
-const uint16_t PROGMEM w_scln_combo[]      = {KC_M, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM w_scln_combo[]      = {KC_W, KC_SCLN, COMBO_END};
 const uint16_t PROGMEM o_h_t_combo[]       = {CT_O, AL_H, KC_T, COMBO_END};
 
 // both hand combinations.

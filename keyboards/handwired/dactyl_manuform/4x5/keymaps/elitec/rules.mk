@@ -1,1 +1,4 @@
 BOOTLOADER = atmel-dfu
+
+RGBLIGHT_ENABLE = yes
+SLEEP_LED_ENABLE = no

@@ -1,5 +1,7 @@
 #pragma once
 
+#define EE_HANDS
+
 #define COMBO_TERM  50
 #define COMBO_COUNT 38
 #define IGNORE_MOD_TAP_INTERRUPT

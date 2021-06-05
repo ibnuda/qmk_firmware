@@ -62,7 +62,6 @@ enum custom_keycodes {
   LOWER,
   RAISE,
   ADJUST,
-  MOVMNT,
 };
 
 // thumb keys.
@@ -83,7 +82,6 @@ enum custom_keycodes {
 // layer toggle.
 #define LW_E     LT(_LOWER, KC_E)
 #define RS_SPC   LT(_RAISE, KC_SPC)
-#define MV_U     LT(_MOVMNT, KC_U)
 
 // idk, man. not used, i guess.
 #define ADDDD    MO(_ADJUST)
@@ -184,9 +182,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     ADDDD,  ADDDD  ,_______,    _______,_______,RAISE
 ),
 [_LOWER] = LAYOUT_split_3x5_3(
-    KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,      KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC ,
-    KC_LSFT,KC_PSCR,KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT  ,
-    KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
+    _______,_______,_______,KC_F1,  KC_F2,      KC_F3,  KC_F4,  _______,_______,_______ ,
+    _______,KC_PSCR,KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,_______,_______  ,
+    _______,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, _______,_______ ,
                     LOWER,  _______,_______,    _______,ADDDD,ADDDD
 ),
 [_ADJUST] = LAYOUT_split_3x5_3(
@@ -194,12 +192,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TSKMGR, KC_LEFT,KC_DOWN,KC_RGHT,UPTAB,      DNTAB,  KC_ENT, KC_LGUI,_______,CALDL,
     _______,CLSGUI, _______,CONPST, RESET,      _______,_______,_______,_______,_______,
                     _______,_______,_______,    _______,_______,_______
-),
-[_MOVMNT] = LAYOUT_split_3x5_3(
-    _______,_______,_______,_______,_______,     _______,KC_PGUP,KC_HOME,_______,_______,
-    _______,_______,_______,_______,_______,     KC_LEFT,KC_DOWN,KC_UP,  KC_RGHT,_______,
-    _______,_______,_______,_______,_______,     _______,KC_PGDN,KC_ENT, _______,_______,
-                    _______,_______,_______,     _______,_______,_______
 ),
 };
 

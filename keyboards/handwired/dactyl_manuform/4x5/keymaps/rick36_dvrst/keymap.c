@@ -102,9 +102,9 @@ enum custom_keycodes {
 #define CLSGUI LALT(KC_F4)
 
 // left hand combinations.
-const uint16_t PROGMEM lu_p_r_combo[]     = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM lu_r_m_combo[]     = {KC_DOT, KC_C, COMBO_END};
-const uint16_t PROGMEM lu_r_i_combo[]     = {KC_DOT, KC_P, COMBO_END};
+const uint16_t PROGMEM lu_p_r_combo[]     = {KC_Q, KC_V, COMBO_END};
+const uint16_t PROGMEM lu_r_m_combo[]     = {KC_V, KC_C, COMBO_END};
+const uint16_t PROGMEM lu_r_i_combo[]     = {KC_V, KC_P, COMBO_END};
 const uint16_t PROGMEM lu_m_i_combo[]     = {KC_C, KC_P, COMBO_END};
 const uint16_t PROGMEM lu_m_ii_combo[]    = {KC_C, KC_B, COMBO_END};
 const uint16_t PROGMEM lu_i_ii_combo[]    = {KC_P, KC_B, COMBO_END};
@@ -121,9 +121,9 @@ const uint16_t PROGMEM ru_r_i_combo[]      = {KC_Y, KC_L, COMBO_END};
 const uint16_t PROGMEM ru_m_i_combo[]      = {KC_U, KC_L, COMBO_END};
 const uint16_t PROGMEM ru_m_ii_combo[]     = {KC_U, KC_Z, COMBO_END};
 const uint16_t PROGMEM ru_i_ii_combo[]     = {KC_L, KC_Z, COMBO_END};
-const uint16_t PROGMEM rl_p_r_combo[]      = {KC_Q, KC_V, COMBO_END};
-const uint16_t PROGMEM rl_r_m_combo[]      = {KC_V, KC_W, COMBO_END};
-const uint16_t PROGMEM rl_r_i_combo[]      = {KC_V, KC_M, COMBO_END};
+const uint16_t PROGMEM rl_p_r_combo[]      = {KC_DOT, KC_COMM, COMBO_END};
+const uint16_t PROGMEM rl_r_m_combo[]      = {KC_COMM, KC_W, COMBO_END};
+const uint16_t PROGMEM rl_r_i_combo[]      = {KC_COMM, KC_M, COMBO_END};
 const uint16_t PROGMEM rl_m_i_combo[]      = {KC_W, KC_M, COMBO_END};
 const uint16_t PROGMEM rl_i_ii_combo[]     = {KC_M, KC_SCLN, COMBO_END};
 
@@ -163,9 +163,9 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
-    KC_COMM,KC_DOT, KC_C,   KC_P,   KC_B,       KC_Z,   KC_L,   KC_U,   KC_Y,   KC_SLSH,
+    KC_Q,   KC_V,   KC_C,   KC_P,   KC_B,       KC_Z,   KC_L,   KC_U,   KC_Y,   KC_SLSH,
     SH_R,   CT_S,   AL_T,   KC_H,   GU_D,       GU_F,   KC_N,   AL_A,   CT_I,   SH_O,
-    KC_QUOT,KC_G,   KC_J,   KC_K,   KC_X,       KC_SCLN,KC_M,   KC_W,   KC_V,   KC_Q,
+    KC_QUOT,KC_G,   KC_J,   KC_K,   KC_X,       KC_SCLN,KC_M,   KC_W,   KC_COMM,KC_DOT,
             _______,LW_E,                                       RS_SPC, _______,
                             SF_BSPC, KC_ESC,    RAISE,  AL_ENT,
                             _______, _______,   _______,_______,

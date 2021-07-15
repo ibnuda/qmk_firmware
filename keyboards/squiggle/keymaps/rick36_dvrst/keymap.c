@@ -161,7 +161,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,   KC_V,   KC_C,   KC_P,   KC_B,       KC_Z,   KC_L,   KC_U,   KC_Y,   KC_SLSH,
     SH_R,   CT_S,   AL_T,   KC_H,   GU_D,       GU_F,   KC_N,   AL_A,   CT_I,   SH_O,
     KC_QUOT,KC_G,   KC_J,   KC_K,   KC_X,       KC_SCLN,KC_M,   KC_W,   KC_COMM,KC_DOT,
-                    LW_E,   SF_BSPC,KC_ESC,     RAISE,  AL_ENT, RS_SPC
+                    KC_ESC, LW_E,   SF_BSPC,    AL_ENT, RS_SPC, RAISE
 
 ),
 
@@ -169,19 +169,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EXLM,KC_AT,  KC_UP,  KC_LCBR,KC_RCBR,    KC_BSLS,KC_7,   KC_8,   KC_9,   KC_ASTR ,
     KC_HASH,KC_LEFT,KC_DOWN,KC_RGHT,KC_DLR,     KC_EQL, KC_4,   KC_5,   KC_6,   KC_0 ,
     KC_LBRC,KC_RBRC,KC_LPRN,KC_RPRN,KC_AMPR,    KC_GRV, KC_1,   KC_2,   KC_3,   KC_PLUS ,
-                    ADDDD  ,SF_BSPC,_______,    _______,_______,RS_SPC
+                    _______,ADDDD  ,SF_BSPC,    _______,RS_SPC, RAISE
 ),
 [_LOWER] = LAYOUT_split_3x5_3(
     KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,      KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC ,
     KC_LSFT,KC_TAB, KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT  ,
     KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
-                    ADDDD  ,_______,_______,    _______,RS_SPC, ADDDD
+                    ADDDD  ,_______,_______,    RS_SPC, ADDDD,  RAISE
 ),
 [_ADJUST] = LAYOUT_split_3x5_3(
     _______,EXPLR,  KC_UP,  PRVTAB, PRVWIN,     NXTWIN, NXTTAB, _______,_______,LCKGUI,
     TSKMGR, KC_LEFT,KC_DOWN,KC_RGHT,UPTAB,      DNTAB,  KC_ENT, KC_LGUI,_______,CALDL,
     _______,CLSGUI, _______,CONPST, RESET,      _______,_______,_______,_______,_______,
-                    ADDDD,  _______,_______,    _______,_______,RS_SPC
+                    ADDDD,  _______,_______,    _______,RS_SPC, RAISE
 ),
 };
 
